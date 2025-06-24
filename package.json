@@ -1,5 +1,40 @@
 {
   "name": "foodxchange-app",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@tanstack/react-query": "^5.81.2",
+    "axios": "^1.10.0",
+    "lucide-react": "^0.523.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "react-scripts": "^5.0.1",
+    "recharts": "^3.0.0",
+    "socket.io-client": "^4.8.1",
+    "zustand": "^5.0.5"
+  },
+  "scripts": {
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "react-scripts build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10"
+  }
 }
