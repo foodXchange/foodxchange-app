@@ -1,11 +1,15 @@
-﻿import React, { createContext, useState, useContext, useEffect } from 'react';
+﻿// C:\Users\foodz\Documents\GitHub\Development\foodxchange-app\src\contexts\AuthContext.js
+
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const AuthContext = createContext({});
 
+// Configure axios defaults
 axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
+// Add token to requests if it exists
 axios.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -32,6 +36,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Check if user is logged in on mount
   useEffect(() => {
     checkAuth();
   }, []);
