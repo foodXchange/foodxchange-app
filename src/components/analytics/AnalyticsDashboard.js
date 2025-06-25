@@ -174,15 +174,15 @@ const AnalyticsDashboard = () => {
         <h3 className="text-xl font-semibold mb-4">AI-Powered Insights</h3>
         <div className="grid grid-cols-3 gap-4">
           <div className="bg-white rounded-lg p-4">
-            <div className="text-purple-600 font-semibold mb-2">?? Growth Opportunity</div>
+            <div className="text-purple-600 font-semibold mb-2">📈 Growth Opportunity</div>
             <p className="text-sm">Organic products category shows 45% growth. Consider expanding inventory.</p>
           </div>
           <div className="bg-white rounded-lg p-4">
-            <div className="text-purple-600 font-semibold mb-2">? Quick Win</div>
+            <div className="text-purple-600 font-semibold mb-2">⚡ Quick Win</div>
             <p className="text-sm">Reduce response time by 2 hours to increase conversion by est. 15%.</p>
           </div>
           <div className="bg-white rounded-lg p-4">
-            <div className="text-purple-600 font-semibold mb-2">?? Focus Area</div>
+            <div className="text-purple-600 font-semibold mb-2">🎯 Focus Area</div>
             <p className="text-sm">Dairy category declining. Review pricing and supplier quality scores.</p>
           </div>
         </div>
@@ -192,3 +192,5 @@ const AnalyticsDashboard = () => {
 };
 
 export default AnalyticsDashboard;
+
+

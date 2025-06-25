@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Package, Truck, CheckCircle, Clock, DollarSign, FileText } from 'lucide-react';
 
 const SampleRequestSystem = () => {
-  const [activeRequests, setActiveRequests] = useState([
+  const [activeRequests] = useState([
     {
       id: 1,
       product: 'Organic Matcha Powder',
@@ -24,11 +24,6 @@ const SampleRequestSystem = () => {
       tracking: null
     }
   ]);
-
-  const samplePolicies = {
-    free: ['First 3 samples per supplier', 'Orders over $10,000', 'Premium members'],
-    paid: ['Additional samples', 'Express shipping', 'Custom packaging']
-  };
 
   const requestWorkflow = [
     { step: 1, name: 'Request Submitted', icon: FileText, status: 'completed' },
@@ -90,32 +85,6 @@ const SampleRequestSystem = () => {
                 )}
               </React.Fragment>
             ))}
-          </div>
-        </div>
-
-        {/* Sample Policies */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
-          <div className="border rounded-lg p-4">
-            <h3 className="font-semibold text-green-600 mb-3">Free Samples</h3>
-            <ul className="space-y-2">
-              {samplePolicies.free.map((policy, index) => (
-                <li key={index} className="flex items-center text-sm">
-                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                  {policy}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="border rounded-lg p-4">
-            <h3 className="font-semibold text-orange-600 mb-3">Paid Samples</h3>
-            <ul className="space-y-2">
-              {samplePolicies.paid.map((policy, index) => (
-                <li key={index} className="flex items-center text-sm">
-                  <DollarSign className="w-4 h-4 text-orange-500 mr-2" />
-                  {policy}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 

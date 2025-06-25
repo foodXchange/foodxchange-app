@@ -148,7 +148,7 @@ const ComplianceDashboard = () => {
                           <div className="text-xs text-gray-600">Score</div>
                         </div>
                         <button className="text-blue-600 hover:text-blue-700">
-                          View Details ?
+                          View Details →
                         </button>
                       </div>
                     </div>
@@ -164,3 +164,5 @@ const ComplianceDashboard = () => {
 };
 
 export default ComplianceDashboard;
+
+

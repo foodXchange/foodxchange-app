@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, Filter, TrendingUp, Globe, ShieldCheck, Zap } from 'lucide-react';
 
 const ProductDiscovery = () => {
-  const [filters, setFilters] = useState({
-    trending: false,
-    newProducts: false,
-    verified: false,
-    samples: false,
-    certifications: [],
-    priceRange: { min: 0, max: 10000 },
-    moq: { min: 0, max: 5000 },
-    leadTime: 'all'
-  });
-
-  const [matchScore, setMatchScore] = useState(0);
-  const [recommendations, setRecommendations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const trendingCategories = [
     { name: 'Plant-Based Proteins', growth: '+127%', icon: '??' },
@@ -47,6 +35,20 @@ const ProductDiscovery = () => {
         </div>
       </div>
 
+      {/* Search Bar */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search by brand, product name, keyword or barcode"
+            className="w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <Search className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
+        </div>
+      </div>
+
       {/* Trending Categories */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-4 flex items-center">
@@ -68,7 +70,7 @@ const ProductDiscovery = () => {
       </div>
 
       {/* Smart Filters */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-xl font-semibold mb-4">Smart Filters</h3>
         
         <div className="grid grid-cols-3 gap-6">
@@ -94,60 +96,34 @@ const ProductDiscovery = () => {
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Lead Time */}
           <div>
-            <h4 className="font-medium mb-3">Required Certifications</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {['Organic', 'Non-GMO', 'Fair Trade', 'Kosher', 'Halal', 'Gluten-Free'].map(cert => (
-                <label key={cert} className="flex items-center text-sm">
-                  <input type="checkbox" className="mr-1" />
-                  {cert}
-                </label>
-              ))}
-            </div>
+            <h4 className="font-medium mb-3">Lead Time</h4>
+            <select className="w-full px-3 py-2 border rounded">
+              <option>Any</option>
+              <option>Less than 1 week</option>
+              <option>1-2 weeks</option>
+              <option>2-4 weeks</option>
+              <option>More than 4 weeks</option>
+            </select>
           </div>
 
-          {/* Business Filters */}
+          {/* Price Range */}
           <div>
-            <h4 className="font-medium mb-3">Business Requirements</h4>
-            <div className="space-y-3">
-              <div>
-                <label className="text-sm text-gray-600">MOQ Range</label>
-                <div className="flex gap-2">
-                  <input type="number" placeholder="Min" className="w-full px-2 py-1 border rounded" />
-                  <input type="number" placeholder="Max" className="w-full px-2 py-1 border rounded" />
-                </div>
-              </div>
-              <div>
-                <label className="text-sm text-gray-600">Lead Time</label>
-                <select className="w-full px-2 py-1 border rounded">
-                  <option>Any</option>
-                  <option>< 1 week</option>
-                  <option>1-2 weeks</option>
-                  <option>2-4 weeks</option>
-                </select>
-              </div>
-            </div>
+            <h4 className="font-medium mb-3">Price Range</h4>
+            <select className="w-full px-3 py-2 border rounded">
+              <option>All Prices</option>
+              <option>Under $10</option>
+              <option>$10 - $50</option>
+              <option>$50 - $100</option>
+              <option>Over $100</option>
+            </select>
           </div>
         </div>
 
         <button className="mt-6 bg-teal-600 text-white px-6 py-2 rounded-md hover:bg-teal-700">
           Apply Smart Filters
         </button>
-      </div>
-
-      {/* AI Match Score */}
-      <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">Your Match Score</h3>
-        <div className="flex items-center">
-          <div className="text-5xl font-bold text-purple-600">87%</div>
-          <div className="ml-6">
-            <p className="text-gray-700">Based on your buying history and preferences</p>
-            <button className="text-purple-600 hover:text-purple-700 text-sm font-medium mt-2">
-              Improve Match Accuracy ?
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

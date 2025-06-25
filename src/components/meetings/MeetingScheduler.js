@@ -6,10 +6,10 @@ const MeetingScheduler = () => {
   const [meetingType, setMeetingType] = useState('discovery');
   
   const meetingTypes = [
-    { id: 'discovery', name: 'Product Discovery', duration: 30, icon: '??' },
-    { id: 'negotiation', name: 'Price Negotiation', duration: 45, icon: '??' },
-    { id: 'compliance', name: 'Compliance Review', duration: 60, icon: '??' },
-    { id: 'sampling', name: 'Sample Discussion', duration: 30, icon: '??' }
+    { id: 'discovery', name: 'Product Discovery', duration: 30, icon: '🔍' },
+    { id: 'negotiation', name: 'Price Negotiation', duration: 45, icon: '💰' },
+    { id: 'compliance', name: 'Compliance Review', duration: 60, icon: '📋' },
+    { id: 'sampling', name: 'Sample Discussion', duration: 30, icon: '📦' }
   ];
 
   const availableSlots = [
@@ -161,7 +161,7 @@ const MeetingScheduler = () => {
                 ))}
               </ul>
               <button className="mt-3 text-purple-600 hover:text-purple-700 text-sm font-medium">
-                Use Template ?
+                Use Template →
               </button>
             </div>
           ))}
@@ -214,3 +214,5 @@ const MeetingScheduler = () => {
 };
 
 export default MeetingScheduler;
+
+
